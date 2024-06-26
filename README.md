@@ -46,10 +46,15 @@ Frontend:
 
 1. Navega al directorio del cliente: `cd client`
 2. Instala las dependencias: `yarn`
-3. Navega al directorio `../utils/apiroutes.js` y modifica `const baseurl = 'TU BACKEND (POR EJEMPLO http://localhost:3000/pokemon';)`
+3. Navega al directorio `../utils/apiroutes.js` y modifica `const baseurl = 'POR EJEMPLO http://localhost:3000/pokemon';`
 4. Inicia el cliente: `yarn start`
 
 ¡Disfruta!
+
+## ✨ Deployado utilizando
+
+Frontend: [Vercel](https://vercel.com)
+Backend: [Render](https://render.com)
 
 ## 📬 Contacto
 

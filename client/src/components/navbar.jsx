@@ -29,7 +29,7 @@ const Navbar = ({ startGame }) => {
   };
 
   const handleOpenDocumentation = () => {
-    window.open('https://github.com/DarioAlbor/PokemonChallenge', '_blank');
+    window.open('https://github.com/DarioAlbor/ChallengePokemon', '_blank');
     handleMenuClose();
   };
 
