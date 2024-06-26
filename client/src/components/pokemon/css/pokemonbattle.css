@@ -84,4 +84,22 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .pokemon-card {
+    min-width: 200px;
+  }
+
+  .pokemon-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .progress-bar {
+    height: 8px;
+  }
+
+  .start-battle-button {
+    position: relative;
+    top: 10px;
+  }
 }

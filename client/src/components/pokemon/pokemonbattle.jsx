@@ -15,6 +15,7 @@ const PokemonBattle = ({ selectedPokemon, onClose, onCloseAll, onBackToSelection
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [showFinalOpponent, setShowFinalOpponent] = useState(false);
   const battleAudioRef = useRef(null);
+  const startBattleButtonRef = useRef(null);
 
   useEffect(() => {
     const fetchOpponent = async () => {
@@ -45,6 +46,12 @@ const PokemonBattle = ({ selectedPokemon, onClose, onCloseAll, onBackToSelection
 
     fetchOpponent();
   }, [selectedPokemon]);
+
+  useEffect(() => {
+    if (showFinalOpponent && !battleResult && startBattleButtonRef.current) {
+      startBattleButtonRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [showFinalOpponent, battleResult]);
 
   const handleStartBattle = async () => {
     try {
@@ -118,16 +125,16 @@ const PokemonBattle = ({ selectedPokemon, onClose, onCloseAll, onBackToSelection
             <Typography variant="h4" component="div">
               VS
             </Typography>
+            {showFinalOpponent && !battleResult && (
+              <Button ref={startBattleButtonRef} variant="contained" color="primary" sx={{ mt: 2 }} onClick={handleStartBattle}>
+                Comenzar batalla
+              </Button>
+            )}
           </Grid>
           <Grid item xs={12} md={5}>
             {opponent && renderStats(opponent)}
           </Grid>
         </Grid>
-        {showFinalOpponent && !battleResult && (
-          <Button variant="contained" color="primary" sx={{ mt: 4 }} onClick={handleStartBattle}>
-            Comenzar batalla
-          </Button>
-        )}
         {battleResult && (
           <PokemonBattleLog 
             attackLog={attackLog} 

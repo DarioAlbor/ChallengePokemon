@@ -7,13 +7,14 @@
 }
 
 .battle-log {
-  background-color: black;
-  color: green;
+  background-color: gray;
+  color: black;
   padding: 1rem;
   border-radius: 2rem;
   font-family: monospace;
   height: 100%;
   position: relative;
+  overflow-y: auto; /* Ensure this property is set */
 }
 
 .winner-box {

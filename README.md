@@ -39,14 +39,14 @@ Frontend:
 
 1. Navega al directorio del servidor: `cd server`
 2. Instala las dependencias: `yarn`
-3. Genera la base de datos de pokémones `pokemon.db` (si deseas una nueva, elimina la actual): `yarn start seed`
+3. Genera la base de datos de pokémones `pokemon.db` (si deseas una nueva, elimina la actual): `yarn run seed`
 4. Inicia el servidor: `yarn start`
 
 ### Configurar y arrancar el cliente
 
 1. Navega al directorio del cliente: `cd client`
 2. Instala las dependencias: `yarn`
-3. Navega al directorio `../utils/apiroutes.js` y modifica `const baseurl = 'POR EJEMPLO http://localhost:3000/pokemon';`
+3. Navega al directorio `../utils/apiroutes.js` y modifica `const baseurl = 'http://localhost:3000/pokemon';`
 4. Inicia el cliente: `yarn start`
 
 ¡Disfruta!

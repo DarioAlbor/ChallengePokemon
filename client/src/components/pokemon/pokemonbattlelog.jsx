@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import Confetti from 'react-confetti';
 import './css/pokemonbattlelog.css';
@@ -8,6 +8,8 @@ const PokemonBattleLog = ({ attackLog, winner, isWinner, onReplay, battleAudioRe
   const [displayLogs, setDisplayLogs] = useState([]);
   const [showWinner, setShowWinner] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const battleLogRef = useRef(null);
+  const logContainerRef = useRef(null);
 
   useEffect(() => {
     if (currentLogIndex < attackLog.length) {
@@ -32,6 +34,18 @@ const PokemonBattleLog = ({ attackLog, winner, isWinner, onReplay, battleAudioRe
   }, [currentLogIndex, attackLog, isWinner, battleAudioRef]);
 
   useEffect(() => {
+    if (battleLogRef.current) {
+      battleLogRef.current.scrollTop = battleLogRef.current.scrollHeight;
+    }
+  }, [displayLogs]);
+
+  useEffect(() => {
+    if (logContainerRef.current) {
+      logContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [displayLogs]);
+
+  useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
@@ -40,7 +54,7 @@ const PokemonBattleLog = ({ attackLog, winner, isWinner, onReplay, battleAudioRe
   }, []);
 
   return (
-    <Box className="battle-log-container">
+    <Box className="battle-log-container" ref={logContainerRef}>
       {isWinner && showWinner && (
         <Confetti
           width={windowSize.width}
@@ -51,7 +65,7 @@ const PokemonBattleLog = ({ attackLog, winner, isWinner, onReplay, battleAudioRe
         />
       )}
       {!showWinner ? (
-        <Box className="battle-log">
+        <Box className="battle-log" ref={battleLogRef}>
           {displayLogs.map((log, index) => (
             <Typography key={index} variant="body2">
               {log}
