@@ -1,0 +1,74 @@
+.battle-log-container {
+  margin-top: 1rem;
+  height: auto;
+  overflow-y: auto;
+  position: relative;
+  max-height: 70vh;
+}
+
+.battle-log {
+  background-color: black;
+  color: green;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-family: monospace;
+  height: 100%;
+  position: relative;
+}
+
+.winner-box {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  height: auto;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.winner {
+  background-color: lightblue;
+  color: black;
+}
+
+.loser {
+  background-color: lightcoral;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .battle-log-container {
+    height: auto;
+    max-height: 50vh;
+  }
+
+  .battle-log {
+    padding: 0.8rem;
+  }
+
+  .winner-box {
+    width: 90%;
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .battle-log-container {
+    height: auto;
+    max-height: 40vh;
+  }
+
+  .battle-log {
+    padding: 0.5rem;
+  }
+
+  .winner-box {
+    width: 100%;
+    max-width: 200px;
+  }
+}

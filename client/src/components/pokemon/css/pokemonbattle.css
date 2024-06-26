@@ -1,0 +1,87 @@
+.battle-container {
+  position: relative;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  top: 5%;
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.back-button {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+}
+
+.close-button {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+}
+
+.pokemon-card {
+  min-width: 275px;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .battle-container {
+    width: 95%;
+    padding: 8px;
+  }
+
+  .pokemon-card {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .pokemon-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .submit-exit-container {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .battle-container {
+    width: 100%;
+    padding: 4px;
+    top: 2%;
+  }
+
+  .pokemon-card {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .pokemon-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .submit-exit-container {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
